@@ -49,10 +49,7 @@ server {
 
 
 
-
-
-
-
+for key in server: configtemplate = configtemplate.replace('<[%s]>'%(key),server[key])
 
 
 
