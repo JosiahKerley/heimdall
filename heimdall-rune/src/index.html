@@ -1,36 +1,41 @@
 <HTML>
-	<head>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-		<script>
-		function loadSites() {
-			var text = '[{"name": "WikiPedia","icon": "http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Wikipedia-alt-1-Metro-icon.png","url": "http://www.wikipedia.org" }, { "name": "Google", "icon": "http://icons.iconarchive.com/icons/danleech/simple/1024/google-icon.png",        "url": "https://google.com"    },{ "name": "Slack", "icon": "http://iosicongallery.com/iosicongallery/img/512/slack-2014.png", "url": "https://slack.com"}]';
-			//var jsonhttp = new XMLHttpRequest();
-			//var url = "sites.json";
-			//jsonhttp.open("GET", url, true);
-			//jsonhttp.send();
-			//var text = jsonhttp.responseText
-			var settings = JSON.parse(text);
-			var sitedivs = "";
-			for (site in settings) {
-				sitedivs = sitedivs+'<a href="'+settings[site].url+'"><div class="app"><div class="box"><img src="'+settings[site].icon+'" ></div><div class="text"><div class="title">'+settings[site].name+'</div><div class="description">This is a description of the app. It is too long for it to be a good amount of textThis is a description of the app. It is too long for it to be a good amount of text</div></div></div></a>';
-			}
-			document.getElementById("sites").innerHTML = sitedivs;
-			$(document).ready(function(){
-			$("img").load(function() {
-			$(this).wrap(function(){
-			//return '<span class="image-wrap ' + $(this).attr('class') + '" style="position:relative; display:inline-block; background:url(' + $(this).attr('src') + ') no-repeat center center; width: ' + $(this).width() + 'px; height: ' + $(this).height() + 'px;" />';
-			return '<span class="image-wrap ' + $(this).attr('class') + '" style="position:relative; display:inline-block; background:url(' + $(this).attr('src') + ') no-repeat center center; width: 75px; height: 75px; background-size: 75px 75px;" />';
-			});
-				$(this).css("opacity","0");
-				});
-			});
-		}
-		</script>
+        <head>
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+                <script>
 
-	</head>
-	<BODY onload="loadSites()">
-		<div id="sites" class="apps"></div>
-	</BODY>
+
+                function sitesettings()
+                {
+                        var xmlHttp = null;
+                        xmlHttp = new XMLHttpRequest();
+                        xmlHttp.open( "GET", "sites.json", false );
+                        xmlHttp.send( null );
+                        return JSON.parse(xmlHttp.responseText);
+                }
+
+                function loadSites() {
+                        var settings = sitesettings();
+                        var sitedivs = "";
+                        for (site in settings) {
+                                sitedivs = sitedivs+'<a href="'+settings[site].url+'"><div class="app"><div class="box"><img src="'+settings[site].icon+'" ></div><div class="text"><div class="title">'+settings[site].name+'</div><div class="description">This is a description of the app. It is too long for it to be a good amount of textThis is a description of the app. It is too long for it to be a good amount of text</div></div></div></a>';
+                        }
+                        document.getElementById("sites").innerHTML = sitedivs;
+                        $(document).ready(function(){
+                        $("img").load(function() {
+                        $(this).wrap(function(){
+                        //return '<span class="image-wrap ' + $(this).attr('class') + '" style="position:relative; display:inline-block; background:url(' + $(this).attr('src') + ') no-repeat center center; width: ' + $(this).width() + 'px; height: ' + $(this).height() + 'px;" />';
+                        return '<span class="image-wrap ' + $(this).attr('class') + '" style="position:relative; display:inline-block; background:url(' + $(this).attr('src') + ') no-repeat center center; width: 75px; height: 75px; background-size: 75px 75px;" />';
+                        });
+                                $(this).css("opacity","0");
+                                });
+                        });
+                }
+                </script>
+
+        </head>
+        <BODY onload="loadSites()">
+                <div id="sites" class="apps"></div>
+        </BODY>
 </HTML>

@@ -1,6 +1,6 @@
 [
     {
-        "name": "WikiPedia",
+        "name": "Wikipedia",
         "icon": "http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Wikipedia-alt-1-Metro-icon.png",
         "url": "http://www.wikipedia.org"
     },
@@ -11,7 +11,7 @@
     },
     {
         "name": "Slack",
-        "icon": "http://icons.iconarchive.com/icons/bokehlicia/captiva/256/web-slack-icon.png",
+        "icon": "http://iosicongallery.com/iosicongallery/img/512/slack-2014.png",
         "url": "https://slack.com"
     }
 ]
