@@ -17,7 +17,7 @@ backends = [
 
 
 server = {
-	"host":"$http_host",
+	"httphost":"$http_host",
 	"port":"80",
 	"ssl":"",
 	"resolver":"127.0.0.1",
@@ -40,7 +40,7 @@ server {
    auth_basic '<[auth]>';
    auth_basic_user_file '<[authfile]>';
    proxy_pass <[scheme]>://<[host]><[uri]>;
-   proxy_set_header Host <[host]>;
+   proxy_set_header Host <[httphost]>;
    proxy_buffers 256 4k;
    proxy_max_temp_file_size 0k;
  }
