@@ -1,17 +1,20 @@
 [
-    {
-        "name": "Wikipedia",
-        "icon": "http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Wikipedia-alt-1-Metro-icon.png",
-        "url": "http://www.wikipedia.org"
-    },
-    {
-        "name": "Google",
-        "icon": "http://icons.iconarchive.com/icons/danleech/simple/1024/google-icon.png",
-        "url": "https://google.com"
-    },
-    {
-        "name": "Slack",
-        "icon": "http://iosicongallery.com/iosicongallery/img/512/slack-2014.png",
-        "url": "https://slack.com"
-    }
+  {
+    "name": "Wikipedia",
+    "icon": "http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Wikipedia-alt-1-Metro-icon.png",
+    "description":"",
+    "url": "http://www.wikipedia.org"
+  },
+  {
+    "name": "Google",
+    "icon": "http://icons.iconarchive.com/icons/danleech/simple/1024/google-icon.png",
+    "description":"",
+    "url": "https://google.com"
+  },
+  {
+    "name": "Slack",
+    "icon": "http://iosicongallery.com/iosicongallery/img/512/slack-2014.png",
+    "description":"",
+    "url": "https://slack.com"
+  }
 ]

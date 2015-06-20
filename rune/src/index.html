@@ -19,7 +19,7 @@
                         var settings = sitesettings();
                         var sitedivs = "";
                         for (site in settings) {
-                                sitedivs = sitedivs+'<a href="'+settings[site].url+'"><div class="app"><div class="box"><img src="'+settings[site].icon+'" ></div><div class="text"><div class="title">'+settings[site].name+'</div><div class="description">This is a description of the app. It is too long for it to be a good amount of textThis is a description of the app. It is too long for it to be a good amount of text</div></div></div></a>';
+                                sitedivs = sitedivs+'<a href="'+settings[site].url+'"><div class="app"><div class="box"><img src="'+settings[site].icon+'" ></div><div class="text"><div class="title">'+settings[site].name+'</div><div class="description">'+settings[site].description+'</div></div></div></a>';
                         }
                         document.getElementById("sites").innerHTML = sitedivs;
                         $(document).ready(function(){
