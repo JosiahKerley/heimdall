@@ -6,7 +6,7 @@ Requires=docker.service
 [Service]
 TimeoutStartSec=0
 Restart=always
-ExecStart=/opt/rune/rune-docker.py
+ExecStart=/usr/bin/python /opt/rune/rune-docker.py
 
 [Install]
 WantedBy=multi-user.target
