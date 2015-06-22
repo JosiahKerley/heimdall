@@ -1,0 +1,12 @@
+[Unit]
+Description=Generates sites.json for rune
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStart=/opt/rune/rune-docker.py
+
+[Install]
+WantedBy=multi-user.target
