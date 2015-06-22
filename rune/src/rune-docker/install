@@ -1,1 +1,9 @@
 #!/bin/bash
+mkdir /opt/rune
+curl https://raw.githubusercontent.com/JosiahKerley/heimdall/master/rune/src/rune-docker/rune-docker.py > /opt/rune/rune-docker.py
+curl https://raw.githubusercontent.com/JosiahKerley/heimdall/master/rune/src/rune-docker/rune-docker.service > /etc/systemd/system/rune-docker.service
+curl https://raw.githubusercontent.com/JosiahKerley/heimdall/master/rune/src/rune-docker/rune-docker-http.service > /etc/systemd/system/rune-docker-http.service
+systemctl enable rune-docker
+systemctl start rune-docker
+systemctl enable rune-docker-http
+systemctl start rune-docker-http

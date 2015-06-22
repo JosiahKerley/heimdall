@@ -1,0 +1,13 @@
+[Unit]
+Description=Serves Rune
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+WorkingDirectory=/var/www/html/rune
+ExecStart=/usr/bin/python -m SimpleHTTPServer
+
+[Install]
+WantedBy=multi-user.target
