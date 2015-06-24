@@ -40,6 +40,12 @@ def poll():
     for i in container['Labels']:
       proto[i] = container['Labels'][i]
     sites.append(proto)
+  try:
+    with open(rootdir+'/defaults.json', 'r') as f:
+      default = json.loads(f.read())
+    sites = dict(sites.items() + defaults.items())
+  except:
+    pass
   with open(rootdir+'/sites.json', 'w') as f:
     f.write(json.dumps(sites,indent=2))
 
