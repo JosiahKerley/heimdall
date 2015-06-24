@@ -43,7 +43,7 @@ def poll():
   try:
     with open(rootdir+'/defaults.json', 'r') as f:
       default = json.loads(f.read())
-    sites = dict(sites.items() + defaults.items())
+    sites += default
   except:
     pass
   with open(rootdir+'/sites.json', 'w') as f:
